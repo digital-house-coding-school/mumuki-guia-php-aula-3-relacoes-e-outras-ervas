@@ -10,6 +10,6 @@ Nesse caso, consideraremos que o campo a seguir também está incluído no formu
 
 Por sua vez, uma coluna, também chamada de poster, foi adicionada à tabela de filmes no banco de dados.
 
-> O seu trabalho é modificar o método `store` para que você também salve a foto na pasta **public** e atribua o nome do arquivo à coluna poster no banco de dados antes de executar o método save.
+> O seu trabalho é modificar o método `store`. Ele também deve salvar a foto na pasta **public** e atribuir o nome do arquivo à coluna poster no banco de dados. Tudo isso antes de executar o método save.
 
 Sucesso!
