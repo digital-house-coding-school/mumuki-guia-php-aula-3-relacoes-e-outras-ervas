@@ -222,7 +222,36 @@ class Filme extends Model {
   }
   
   public function save() {
-
+    global $request;
+    global $pasePorSave;
+    global $pasePorValidate;
+    
+    if (!$pasePorValidate) {
+      throw new Exception("Você precisa realizar a validação antes de chamar o método save");
+    }
+    
+    $pasePorSave = true;
+    
+    if (!isset($this->title)) {
+      throw new Exception("O filme que está sendo adicionado não tem o título");
+    }
+    if ($this->title !== $request->title) {
+      throw new Exception("O filme que está sendo adicionado não tem o título recebido por request");
+    }
+    
+    if (!isset($this->rating)) {
+      throw new Exception("O filme que está sendo adicionado não tem o rating");
+    }
+    if ($this->rating !== $request->rating) {
+      throw new Exception("O filme que está sendo adicionado não tem o rating recebido por request");
+    }
+    
+    if (!isset($this->awards)) {
+      throw new Exception("O filme que está sendo adicionado não tem o premios");
+    }
+    if ($this->awards !== $request->awards) {
+      throw new Exception("O filme que está sendo adicionado não tem os premios recebidos por request");
+    }
   }
   
   public function delete() {
