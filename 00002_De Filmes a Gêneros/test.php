@@ -35,5 +35,5 @@ public function testFilme(): void {
 		
 		$this->assertTrue($genero[0] === "App\Genero", "Se espera que o primeiro parâmetro recebido pela belongsTo seja 'App\Genero'");
 		
-		$this->assertTrue($genero[1] === "genre_id", "Se espera que o primeiro parâmetro recebido pela belongsTo seja 'genre_id'");
+		$this->assertTrue($genero[1] === "genero_id", "Se espera que o segundo parâmetro recebido pela belongsTo seja 'genero_id'");
 	  }
