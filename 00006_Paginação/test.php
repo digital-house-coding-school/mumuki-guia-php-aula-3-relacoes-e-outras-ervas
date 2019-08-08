@@ -3,7 +3,7 @@ public function testPaginado(): void {
 		
 		$pasePorView = false;
 		
-		$pc = new FilmeController();
+		$pc = new FilmesController();
 		
 		try {
 			$resul = $pc->listar();
