@@ -1,8 +1,9 @@
 ---
-name: Aula 3 - Relações e outras ervas
+name: Aula 3 - Relações
 locale: pt
 type: learning
 beta: false
+teacher_info: ''
 language: php
 id_format: "%05d"
 order: []
