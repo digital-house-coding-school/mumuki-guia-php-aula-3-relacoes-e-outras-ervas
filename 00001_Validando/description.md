@@ -21,4 +21,4 @@ Desta vez, no entanto, também pediremos que você o valide antes de armazená-l
 
 Deixamos um link à mão para que você possa revisar as regras de validação do Laravel:
 
-[https://laravel.com/docs/5.1/validation](https://laravel.com/docs/5.1/validation)
+[https://laravel.com/docs/master/validation#available-validation-rulesrtada](https://laravel.com/docs/master/validation#available-validation-rules)
