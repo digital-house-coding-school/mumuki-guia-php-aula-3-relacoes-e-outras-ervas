@@ -59,5 +59,5 @@ public function testFilme(): void {
 			
 			$this->assertTrue($actores[2] === "filme_id", "Se espera que o terceiro parâmetro recibido por belongsToMany seja 'filme_id' fazendo referência a chave estrangeira à classe Filme");
 			
-			$this->assertTrue($actores[3] === "actor_id", "Se esperaba que el cuarto parámetro recibido por belongsToMany diga 'ator_id' fazendo referência a chave estrangeira à classe Ator");
+			$this->assertTrue($actores[3] === "ator_id", "Se espera que o quarto parâmetro recibido por belongsToMany seja 'ator_id' fazendo referência a chave estrangeira à classe Ator");
 		}
