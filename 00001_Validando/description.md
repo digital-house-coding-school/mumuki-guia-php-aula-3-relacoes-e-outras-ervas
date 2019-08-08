@@ -2,14 +2,14 @@
 
 Mais uma vez recebemos o seguinte formulário para inserir um filme:
 
-``html
+```html
 <form action="/filmes/adicionar" method="POST">
   {{csrf_field}}
   <input type="text" name="title">
   <input type="text" name="rating">
   <input type="text" name="awards">
 </ form>
-``
+```
 
 Desta vez, no entanto, também pediremos que você o valide antes de armazená-lo. As regras de validação serão as seguintes:
 
