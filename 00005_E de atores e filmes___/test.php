@@ -1,37 +1,37 @@
-public function testActor(): void {
+public function testAtor(): void {
   $actor = new Actor();
   
-  $this->assertTrue($actor->getTable() === "actors", "La tabla de la tabla de actores debe llamarse 'actors'");
+  $this->assertTrue($actor->getTable() === "atores", "O \$table da tabela de atores deve chamar 'atores'");
   
-  $this->assertTrue($actor->getPrimaryKey() === "id", "La primary key de la tabla de actores debe llamarse 'id'"); 
+  $this->assertTrue($actor->getPrimaryKey() === "id", "A \$primaryKey da tabela de atores deve chamar 'id'"); 
   
-  $this->assertTrue($actor->getTimestamps() === true, "Es necesario aclarar que la tabla de actores si tiene los timestamps");
+  $this->assertTrue($actor->getTimestamps() === true, "É necessário declarar que a tabela de atores não tem os timestamps");
   
-  $this->assertTrue(is_array($actor->getGuarded()), "El atributo guarded debe ser un array");
+  $this->assertTrue(is_array($actor->getGuarded()), "O atributo \$guarded deve ser um array");
   
-  $this->assertTrue($actor->getGuarded() === [], "El atributo guarded debe ser un array vacío para que todas las columnas de la tabla sean escribibles");
+  $this->assertTrue($actor->getGuarded() === [], "O atributo \$guarded deve ser um array vazio para que todas as colunas da tabela devem ser preenchíveis");
   
-  $this->assertTrue(method_exists("Actor", "peliculas"), "Falta el método peliculas en la clase Actor");
+  $this->assertTrue(method_exists("Ator", "filmes"), "Falta o método filmes na classe Ator");
   
-  $peliculas = $actor->peliculas();
+  $filmes = $actor->filmes();
   
-  $this->assertTrue($actor->belongsToMany, "La función peliculas debe llamar a belongsToMany");
+  $this->assertTrue($actor->belongsToMany, "A função filmes deve chamar o método belongsToMany");
   
-  $this->assertTrue(is_array($peliculas) && count($peliculas) == 4,"Recordá que el método peliculas debe RETORNAR el resultado de belongsToMany");
+  $this->assertTrue(is_array($filmes) && count($filmes) == 4,"Lembra que o método filmes deve retornar o resultado de belongsToMany");
   
-  $this->assertTrue(is_string($peliculas[0]), "El primer parámetro enviado a belongsToMany debe ser un string");
+  $this->assertTrue(is_string($filmes[0]), "O primeiro parâmetro enviado a belongsToMany deve ser uma string");
   
-  $this->assertTrue(is_string($peliculas[1]), "El segundo parámetro enviado a belongsToMany debe ser un string");
+  $this->assertTrue(is_string($filmes[1]), "O segundo parâmetro enviado a belongsToMany deve ser uma string");
   
-    $this->assertTrue(is_string($peliculas[2]), "El tercer parámetro enviado a belongsToMany debe ser un string");
+    $this->assertTrue(is_string($filmes[2]), "O terceiro parâmetro enviado a belongsToMany deve ser uma string");
   
-  $this->assertTrue(is_string($peliculas[3]), "El cuarto parámetro enviado a belongsToMany debe ser un string");
+  $this->assertTrue(is_string($filmes[3]), "O quarto parâmetro enviado a belongsToMany deve ser uma string");
   
-  $this->assertTrue($peliculas[0] === "App\Pelicula", "Se esperaba que el primer parámetro recibido por belongsToMany diga 'App\Pelicula'");
+  $this->assertTrue($filmes[0] === "App\Filme", "Era esperado que o primeiro parâmetro recebido por belongsToMany diga 'App\Filme'");
   
-  $this->assertTrue($peliculas[1] === "actor_movie", "Se esperaba que el segundo parámetro recibido por belongsToMany diga 'actor_movie' haciendo referencia a la tabla intermedia");
+  $this->assertTrue($filmes[1] === "filme_ator", "Era esperado que o segundo parâmetro recibido por belongsToMany diga 'filme_ator' fazendo referência a chave intermediária");
   
-  $this->assertTrue($peliculas[2] === "actor_id", "Se esperaba que el tercer parámetro recibido por belongsToMany diga 'actor_id' haciendo referencia a la clave foránea a la clase Actor");
+  $this->assertTrue($filmes[2] === "actor_id", "Era esperado que o terceiro parâmetro recibido por belongsToMany diga 'ator_id' fazendo referência a chave estrangeira para a classe Ator");
   
-  $this->assertTrue($peliculas[3] === "movie_id", "Se esperaba que el cuarto parámetro recibido por belongsToMany diga 'movie_id' haciendo referencia a la clave foránea a la clase Pelicula");
+  $this->assertTrue($filmes[3] === "movie_id", "Se esperaba que el cuarto parámetro recibido por belongsToMany diga 'movie_id' fazendo referência a chave estrangeira para a classe Filme");
 }

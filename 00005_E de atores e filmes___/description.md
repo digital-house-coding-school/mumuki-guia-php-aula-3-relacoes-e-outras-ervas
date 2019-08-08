@@ -10,8 +10,8 @@ Não se esqueça que `belongsToMany` recebe quatro parâmetros:
 4. O nome do código estrangeiro que aponta para o relacionamento que estamos construindo. Neste caso, a chave estrangeira para a tabela de filmes.
 
 
-Como lembrança, a tabela intermediária é chamada de **actor_movie** e tem 3 colunas:
+Como lembrança, a tabela intermediária é chamada de **filme_ator** e tem 3 colunas:
 
 1. id
-2. actor_id
-3. movie_id
+2. ator_id
+3. filme_id
