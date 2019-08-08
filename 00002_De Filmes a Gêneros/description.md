@@ -1,6 +1,6 @@
 Continuaremos a completar a classe `Filme`, neste caso para indicar a sua relação com a classe `Genero`.
 
-Para isso, pedimos que você adicione um método chamado `Genero` que retornará o gênero associado usando o método `$this->belongsTo`.
+Para isso, pedimos que você adicione um método chamado `genero` que retornará o gênero associado usando o método `$this->belongsTo`.
 
 Não esqueça que `belongsTo` recebe dois parâmetros:
 
