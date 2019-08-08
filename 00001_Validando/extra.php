@@ -62,7 +62,91 @@ class Route {
 }
 
 class Controller {
-
+   public function validate(Request $req, Array $reglas, Array $mensajes = []) {
+    global $pasePorValidate;
+    
+    $pasePorValidate = true;
+    
+    if (count($reglas) != 3) {
+      throw new Exception("Você precisa validar os três campos, por isso o array deveria ter 3 posições");
+    }
+    
+    if (!isset($reglas["title"])) {
+      throw new Exception("Falta a regra para validar o campo title");
+    }
+    if (!isset($reglas["rating"])) {
+      throw new Exception("Falta a regra para validar o campo rating");
+    }
+    if (!isset($reglas["awards"])) {
+      throw new Exception("Falta a regra para validar o campo awards");
+    }
+    
+    if (!is_string($reglas["title"])) {
+      throw new Exception("As regras para validar o title devem estar em formato de string");
+    }
+    if (!is_string($reglas["rating"])) {
+      throw new Exception("As regras para validar o rating devem estar em formato de string");
+    }
+    if (!is_string($reglas["awards"])) {
+      throw new Exception("As regras para validar o awards devem estar em formato de string");
+    }
+    
+    $reglasTitle = explode("|", $reglas["title"]);
+    $reglasRating = explode("|", $reglas["rating"]);
+    $reglasAwards = explode("|", $reglas["awards"]);
+    
+    if (count($reglasTitle) != 3) {
+      throw new Exception("Deveria ter 3 regras para validar o titulo separados pelo caracter |");
+    }
+    
+    if (count($reglasRating) != 4) {
+      throw new Exception("Deveria ter 4 regras para validar o rating separados pelo caracter |");
+    }
+    
+     if (count($reglasAwards) != 3) {
+      throw new Exception("Deveria ter 3 regras para validar o awards separados pelo caracter |");
+    }
+    
+    if (!in_array("required", $reglasTitle)) {
+      throw new Exception("Falta a regra required para validar o titulo");
+    }
+    
+    if (!in_array("max:255", $reglasTitle)) {
+      throw new Exception("Falta a regra max:255 para validar o titulo");
+    }
+    
+    if (!in_array("unique:movies,title", $reglasTitle)) {
+      throw new Exception("Falta a regra unique:movies,title para validar o titulo");
+    }
+    
+    if (!in_array("required", $reglasRating)) {
+      throw new Exception("Falta a regra required para validar o rating");
+    }
+    
+    if (!in_array("numeric", $reglasRating)) {
+      throw new Exception("Falta a regra numeric para validar o rating");
+    }
+    
+    if (!in_array("min:0", $reglasRating)) {
+      throw new Exception("Falta a regra min:0 para validar o rating");
+    }
+    
+    if (!in_array("max:10", $reglasRating)) {
+      throw new Exception("Falta a regra max:10 para validar o rating");
+    }
+    
+    if (!in_array("required", $reglasAwards)) {
+      throw new Exception("Falta a regra required para validar os awards");
+    }
+    
+    if (!in_array("integer", $reglasAwards)) {
+      throw new Exception("Falta a regra integer para validar os awards");
+    }
+      
+    if (!in_array("min:0", $reglasAwards)) {
+      throw new Exception("Falta a regra min:0 para validar os awards");
+    }
+  }
 }
 
 class Model {
