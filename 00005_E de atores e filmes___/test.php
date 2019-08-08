@@ -1,5 +1,5 @@
 public function testAtor(): void {
-  $actor = new Actor();
+  $actor = new Ator();
   
   $this->assertTrue($actor->getTable() === "atores", "O \$table da tabela de atores deve chamar 'atores'");
   
