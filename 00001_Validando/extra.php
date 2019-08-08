@@ -115,8 +115,8 @@ class Controller {
       throw new Exception("Falta a regra max:255 para validar o titulo");
     }
     
-    if (!in_array("unique:filmes,title", $reglasTitle)) {
-      throw new Exception("Falta a regra unique:filmes,title para validar o titulo");
+    if (!in_array("unique:movies,title", $reglasTitle)) {
+      throw new Exception("Falta a regra unique:movies,title para validar o titulo");
     }
     
     if (!in_array("required", $reglasRating)) {
