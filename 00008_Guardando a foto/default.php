@@ -6,13 +6,13 @@ class FilmesController extends Controller {
 		"awards" => "required|integer|min:0"
 	  ]);
 	  
-	  $pelicula = new Filme();
-	  $pelicula->title = $req["title"];
-	  $pelicula->rating = $req["rating"];
-	  $pelicula->awards = $req["awards"];
+	  $filme = new Filme();
+	  $filme->title = $req["title"];
+	  $filme->rating = $req["rating"];
+	  $filme->awards = $req["awards"];
 	  
-	  $pelicula->save();
+	  $filme->save();
 	
-	  return redirect("peliculas/listado");
+	  return redirect("filmes/listar");
 	}
 }
