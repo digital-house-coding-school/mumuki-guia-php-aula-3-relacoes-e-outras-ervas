@@ -5,23 +5,22 @@ public function testStorage(): void {
 		
 		$request = new Request();
 		
-		$this->assertTrue(method_exists("FilmesController",'store'),"Falta o método store dentro do FilmesController");
-		
+		$this->assertTrue(method_exists("FilmesController",'store'),"Falta o método store dentro da FilmesController");
 		$r = new ReflectionMethod("FilmesController", "store");
 		$params = $r->getParameters();
 		
-		$this->assertTrue(count($params) === 1, "O método store deve receber um parâmetros");
+		$this->assertTrue(count($params) === 1, "O método store deve receber um parâmetro.");
 		
 		$this->assertTrue($params[0]->getType() !== null && $params[0]->getType()->getName() === "Request", "O parâmetro recebido pelo store deve ser do tipo Request");
 		
 		$pasePorRedirect = false;
 		
-		$pc = new PeliculasController();
+		$pc = new FilmesController();
 		
 		$request->title = "O Rei Leão";
 		$request->rating = 9.2;
 		$request->awards = 5;
-		$request->posterSecreto = "elreyleon.jpg";
+		$request->posterSecreto = "oreileao.jpg";
 		
 		try {
 		  $resul = $pc->store($request);
@@ -40,12 +39,13 @@ public function testStorage(): void {
 		  $this->assertTrue(false, $e->getMessage());
 		}
 		
-		$this->assertTrue($pasePorSave, "Mmm...parece que não está armazenando nada");
+		$this->assertTrue($pasePorSave, "Parece que não está salvando");
 		
-		$this->assertTrue($request->pasePorStore, "Mmm...parece não estar armazenando a imagem");
+		$this->assertTrue($request->pasePorStore, "Parece que não está armazenando a imagem");
 		
-		$this->assertTrue($pasePorRedirect, "Você não está chamando a função redirect");
+		$this->assertTrue($pasePorRedirect, "Parece que não está chamando afunção redirect");
 		
-		$this->assertTrue(is_string($resul), "Verifique se está retornando o resultado da function redirect");
+		$this->assertTrue(is_string($resul), "Verifique se está retornando o resultado da função redirect. Verifique também o nome da view retornada.");
+		
 		
 	}
