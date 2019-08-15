@@ -4,5 +4,5 @@ Para isso, pedimos que você adicione um método chamado `filmes` que retornará
 
 Não se esqueça que `hasMany` recebe dois parâmetros:
 
-1. O nome da classe em uma string. Se a classe relacionada foi chamada `Sarasa`, seria necessário escrever **"App\Sarasa"**
+1. O nome da classe em uma string. Se a classe relacionada foi chamada `Filmes`, seria necessário escrever **"App\Filmes"**
 2. O nome da chave estrangeira. Neste caso, a chave é **genero_id**
