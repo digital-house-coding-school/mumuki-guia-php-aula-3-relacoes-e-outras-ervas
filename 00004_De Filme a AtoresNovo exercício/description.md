@@ -12,5 +12,5 @@ Não se esqueça que `belongsToMany` recebe quatro parâmetros:
 Lembre-se que a tabela intermediária é chamada de **ator_filme** e tem 3 colunas:
 
 1. id
-2. actor_id
-3. movie_id
+2. ator_id
+3. filme_id
