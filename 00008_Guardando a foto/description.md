@@ -5,7 +5,7 @@ Desta vez, o filme validado e salvo já está armado... nós já fizemos.
 Nesse caso, consideraremos que o campo a seguir também está incluído no formulário para inserir um filme:
 
 ```html
-<input type = "file" name = "poster">
+<input type="file" name="poster">
 ```
 
 Por sua vez, uma coluna, também chamada de poster, foi adicionada à tabela de filmes no banco de dados.
